@@ -1,18 +1,18 @@
-## Getting Started
+# 🚀 JDBC Table Creator (`App.java`)
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+A simple Java utility to connect to MySQL and create a `data` table with an auto‑increment ID, `name`, and `value` columns—if it doesn't already exist. Useful when you're bootstrapping a database schema or testing connectivity.
 
-## Folder Structure
+## 🧰 Prerequisites
 
-The workspace contains two folders by default, where:
+- **Java 8+ JDK** installed (Java 11 or 17 recommended).
+- **MySQL Server** up & running on `localhost:3306`.
+- **MySQL Connector/J** (e.g. `mysql-connector-java‑8.0.34.jar`) available locally or via Maven.
+- A MySQL user with privileges to **create schemas and tables**.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## 🔧 Setup the Database
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Before running the Java app, ensure the database exists:
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+```sql
+mysql> CREATE DATABASE IF NOT EXISTS sample;
+Query OK, 1 row affected (0.05 sec)
